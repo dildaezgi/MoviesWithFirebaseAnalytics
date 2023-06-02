@@ -13,15 +13,28 @@ class SplashScreenVC: UIViewController {
     let reachabilityManager = AFNetworkReachabilityManager.shared()
     let remoteConfig = RemoteConfig.remoteConfig()
     var label: UILabel!
+    var label2: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 160, y: 285)
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        label.font = .boldSystemFont(ofSize: 35)
+        label.center = self.view.center
         label.textAlignment = .center
         view.addSubview(label)
-
+        
+        label.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
+        
+        label2 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        label2.font = .boldSystemFont(ofSize: 35)
+        label2.center = self.view.center
+        label2.textAlignment = .center
+        view.addSubview(label2)
+        
+        label2.transform = CGAffineTransform(translationX: self.view.bounds.width, y: 0)
+        
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
         remoteConfig.configSettings = settings
@@ -54,6 +67,18 @@ class SplashScreenVC: UIViewController {
             self.present(viewController, animated: true, completion: nil)
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.77, delay: 1, options: .curveEaseOut, animations: {
+            self.label.transform = .identity
+            self.label2.transform = .identity
+        }, completion: { _ in
+            self.pulseAnimation(label: self.label)
+            self.pulseAnimation(label: self.label2)
+        })
+    }
 
     func fetchRemoteConfig() {
         remoteConfig.fetch(withExpirationDuration: TimeInterval(60)) { [weak self] (status, error) -> Void in
@@ -63,12 +88,22 @@ class SplashScreenVC: UIViewController {
                 let splashText = self?.remoteConfig.configValue(forKey: "splash_text").stringValue ?? "Welcome :)"
                 DispatchQueue.main.async {
                     self?.label.text = splashText
+                    self?.label2.text = splashText
                 }
             } else {
                 print("Config not fetched")
                 print("Error: \(error?.localizedDescription ?? "No error available.")")
             }
         }
+    }
+    
+    func pulseAnimation(label: UILabel) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: [.repeat, .autoreverse],
+                       animations: {
+                           label.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                       }, completion: nil)
     }
 }
 
