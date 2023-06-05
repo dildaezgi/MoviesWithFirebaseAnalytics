@@ -60,8 +60,8 @@ class SplashScreenVC: UIViewController {
        reachabilityManager.startMonitoring()
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController")
+            let storyboard = UIStoryboard(name: "MoviesViewController", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "MoviesViewController")
             viewController.modalTransitionStyle = .crossDissolve
             viewController.modalPresentationStyle = .fullScreen
             self.present(viewController, animated: true, completion: nil)
