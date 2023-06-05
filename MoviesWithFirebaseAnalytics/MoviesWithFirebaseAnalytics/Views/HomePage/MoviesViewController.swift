@@ -56,12 +56,16 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
                     switch result {
                     case .success(let searchResults):
                         self?.searchResults = searchResults
+                        self?.collectionView.isHidden = false
                         self?.collectionView.reloadData()
                     case .failure(let error):
                         print("Error: \(error)")
                     }
                 }
             }
+        } else {
+            self.collectionView.isHidden = true
+
         }
     }
 }
