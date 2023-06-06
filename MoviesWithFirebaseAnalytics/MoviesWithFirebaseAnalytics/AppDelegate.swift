@@ -8,14 +8,24 @@
 import UIKit
 import FirebaseCore
 import UserNotifications
-//import FirebaseMessaging
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
-        return true
+        Messaging.messaging().delegate = self
+                UNUserNotificationCenter.current().delegate = self
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { isSuccessful, error in
+                    guard isSuccessful else{
+                        return
+                    }
+                    print(">> SUCCESSFUL APNs REGISTRY")
+                }
+                application.registerForRemoteNotifications()
+                return true
     }
 
     // MARK: UISceneSession Lifecycle
@@ -31,20 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
-    func applicationDidFinishLaunching(_ application: UIApplication) {
-        UNUserNotificationCenter.current().delegate = self
-//        Messaging.messaging().delegate = self
+}
 
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(
-          options: authOptions,
-          completionHandler: { _, _ in }
-        )
-
-        application.registerForRemoteNotifications()
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        // FCM token'ınızı kullanarak yapmak istediğiniz işlemleri burada gerçekleştirin
+        // Örneğin, token'ı sunucunuza göndererek özelleştirilmiş bildirimleri yönetebilirsiniz
+        print("FCM token: \(fcmToken ?? "")")
     }
+}
 
-
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
 }
 

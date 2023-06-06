@@ -10,6 +10,9 @@
 		B32305542A2EABB30099E7E6 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32305532A2EABB30099E7E6 /* NibLoadable.swift */; };
 		B32305572A2EBB240099E7E6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B32305562A2EBB240099E7E6 /* Lottie */; };
 		B32305592A2EBBC00099E7E6 /* 99257-loading-gif-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B32305582A2EBBC00099E7E6 /* 99257-loading-gif-animation.json */; };
+		B323055C2A2FEB960099E7E6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B323055B2A2FEB960099E7E6 /* FirebaseAnalytics */; };
+		B323055E2A2FEB960099E7E6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B323055D2A2FEB960099E7E6 /* FirebaseMessaging */; };
+		B32305602A2FEB960099E7E6 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = B323055F2A2FEB960099E7E6 /* FirebaseRemoteConfig */; };
 		B32E534A2A29521000994CA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53492A29521000994CA2 /* AppDelegate.swift */; };
 		B32E534C2A29521000994CA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E534B2A29521000994CA2 /* SceneDelegate.swift */; };
 		B32E534E2A29521000994CA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E534D2A29521000994CA2 /* ViewController.swift */; };
@@ -20,8 +23,6 @@
 		B32E536B2A29521200994CA2 /* MoviesWithFirebaseAnalyticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E536A2A29521200994CA2 /* MoviesWithFirebaseAnalyticsUITests.swift */; };
 		B32E536D2A29521200994CA2 /* MoviesWithFirebaseAnalyticsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E536C2A29521200994CA2 /* MoviesWithFirebaseAnalyticsUITestsLaunchTests.swift */; };
 		B32E537A2A29550300994CA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B32E53792A29550300994CA2 /* GoogleService-Info.plist */; };
-		B32E537D2A2955C700994CA2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B32E537C2A2955C700994CA2 /* FirebaseAnalytics */; };
-		B32E537F2A2955C700994CA2 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = B32E537E2A2955C700994CA2 /* FirebaseRemoteConfig */; };
 		B32E538A2A29609900994CA2 /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53892A29609900994CA2 /* SplashScreenVC.swift */; };
 		B32E538E2A2960D700994CA2 /* SplashScreenVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32E538D2A2960D700994CA2 /* SplashScreenVC.storyboard */; };
 		B32E53912A29635300994CA2 /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B32E53902A29635300994CA2 /* AFNetworking */; };
@@ -98,10 +99,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32E537D2A2955C700994CA2 /* FirebaseAnalytics in Frameworks */,
-				B32E537F2A2955C700994CA2 /* FirebaseRemoteConfig in Frameworks */,
+				B323055E2A2FEB960099E7E6 /* FirebaseMessaging in Frameworks */,
 				B32E53912A29635300994CA2 /* AFNetworking in Frameworks */,
 				B32305572A2EBB240099E7E6 /* Lottie in Frameworks */,
+				B323055C2A2FEB960099E7E6 /* FirebaseAnalytics in Frameworks */,
+				B32305602A2FEB960099E7E6 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +267,11 @@
 			);
 			name = MoviesWithFirebaseAnalytics;
 			packageProductDependencies = (
-				B32E537C2A2955C700994CA2 /* FirebaseAnalytics */,
-				B32E537E2A2955C700994CA2 /* FirebaseRemoteConfig */,
 				B32E53902A29635300994CA2 /* AFNetworking */,
 				B32305562A2EBB240099E7E6 /* Lottie */,
+				B323055B2A2FEB960099E7E6 /* FirebaseAnalytics */,
+				B323055D2A2FEB960099E7E6 /* FirebaseMessaging */,
+				B323055F2A2FEB960099E7E6 /* FirebaseRemoteConfig */,
 			);
 			productName = MoviesWithFirebaseAnalytics;
 			productReference = B32E53462A29521000994CA2 /* MoviesWithFirebaseAnalytics.app */;
@@ -343,9 +346,9 @@
 			);
 			mainGroup = B32E533D2A29521000994CA2;
 			packageReferences = (
-				B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B32E538F2A29635300994CA2 /* XCRemoteSwiftPackageReference "AFNetworking" */,
 				B32305552A2EBB240099E7E6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B323055A2A2FEB960099E7E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B32E53472A29521000994CA2 /* Products */;
 			projectDirPath = "";
@@ -763,7 +766,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		B323055A2A2FEB960099E7E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -787,14 +790,19 @@
 			package = B32305552A2EBB240099E7E6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
-		B32E537C2A2955C700994CA2 /* FirebaseAnalytics */ = {
+		B323055B2A2FEB960099E7E6 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B323055A2A2FEB960099E7E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		B32E537E2A2955C700994CA2 /* FirebaseRemoteConfig */ = {
+		B323055D2A2FEB960099E7E6 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B323055A2A2FEB960099E7E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		B323055F2A2FEB960099E7E6 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B323055A2A2FEB960099E7E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
 		};
 		B32E53902A29635300994CA2 /* AFNetworking */ = {
