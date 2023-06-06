@@ -14,11 +14,11 @@ class SplashScreenVC: UIViewController {
     let remoteConfig = RemoteConfig.remoteConfig()
     var label: UILabel!
     var label2: UILabel!
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
         label.font = .boldSystemFont(ofSize: 35)
         label.center = self.view.center
@@ -38,26 +38,26 @@ class SplashScreenVC: UIViewController {
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 0
         remoteConfig.configSettings = settings
-
+        
         remoteConfig.setDefaults(["splash_text" : "Hoş geldiniz!" as NSObject])
-
+        
         fetchRemoteConfig()
         
         reachabilityManager.setReachabilityStatusChange { status in
-           switch status {
-           case .notReachable:
-               DispatchQueue.main.async {
-                   let alertController = UIAlertController(title: "Hata", message: "İnternet bağlantısı yok", preferredStyle: .alert)
-                   alertController.addAction(UIAlertAction(title: "Tamam", style: .default))
-                   self.present(alertController, animated: true, completion: nil)
-               }
-           case .reachableViaWiFi, .reachableViaWWAN:
-               print("Connection OK!")
-           default:
-               print("Unknown network status")
-           }
-       }
-       reachabilityManager.startMonitoring()
+            switch status {
+            case .notReachable:
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Hata", message: "İnternet bağlantısı yok", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Tamam", style: .default))
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            case .reachableViaWiFi, .reachableViaWWAN:
+                print("Connection OK!")
+            default:
+                print("Unknown network status")
+            }
+        }
+        reachabilityManager.startMonitoring()
         
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
             let storyboard = UIStoryboard(name: "MoviesViewController", bundle: nil)
@@ -79,7 +79,7 @@ class SplashScreenVC: UIViewController {
             self.pulseAnimation(label: self.label2)
         })
     }
-
+    
     func fetchRemoteConfig() {
         remoteConfig.fetch(withExpirationDuration: TimeInterval(60)) { [weak self] (status, error) -> Void in
             if status == .success {
@@ -102,8 +102,8 @@ class SplashScreenVC: UIViewController {
                        delay: 0,
                        options: [.repeat, .autoreverse],
                        animations: {
-                           label.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-                       }, completion: nil)
+            label.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }, completion: nil)
     }
 }
 

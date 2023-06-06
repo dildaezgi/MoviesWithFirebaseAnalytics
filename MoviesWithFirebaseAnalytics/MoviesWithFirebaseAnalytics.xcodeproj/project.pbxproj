@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32305542A2EABB30099E7E6 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32305532A2EABB30099E7E6 /* NibLoadable.swift */; };
+		B32305572A2EBB240099E7E6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B32305562A2EBB240099E7E6 /* Lottie */; };
+		B32305592A2EBBC00099E7E6 /* 99257-loading-gif-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = B32305582A2EBBC00099E7E6 /* 99257-loading-gif-animation.json */; };
 		B32E534A2A29521000994CA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53492A29521000994CA2 /* AppDelegate.swift */; };
 		B32E534C2A29521000994CA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E534B2A29521000994CA2 /* SceneDelegate.swift */; };
 		B32E534E2A29521000994CA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E534D2A29521000994CA2 /* ViewController.swift */; };
@@ -31,6 +34,11 @@
 		B32E53A62A2D62F100994CA2 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53A52A2D62F100994CA2 /* Reusable.swift */; };
 		B32E53A82A2D64C100994CA2 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53A72A2D64C100994CA2 /* UIImageViewExtension.swift */; };
 		B32E53AA2A2D6CEE00994CA2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53A92A2D6CEE00994CA2 /* UIViewExtension.swift */; };
+		B32E53AD2A2D730300994CA2 /* EmptyViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32E53AB2A2D730300994CA2 /* EmptyViewViewController.swift */; };
+		B32E53AE2A2D730300994CA2 /* EmptyViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32E53AC2A2D730300994CA2 /* EmptyViewViewController.xib */; };
+		B3DF91762A2E8632000A5E77 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DF91742A2E8632000A5E77 /* MovieDetailViewController.swift */; };
+		B3DF91792A2E8F7B000A5E77 /* MovieDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3DF91782A2E8F7B000A5E77 /* MovieDetailViewController.storyboard */; };
+		B3DF917B2A2E9405000A5E77 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DF917A2A2E9405000A5E77 /* Navigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B32305532A2EABB30099E7E6 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		B32305582A2EBBC00099E7E6 /* 99257-loading-gif-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99257-loading-gif-animation.json"; sourceTree = "<group>"; };
 		B32E53462A29521000994CA2 /* MoviesWithFirebaseAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesWithFirebaseAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32E53492A29521000994CA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B32E534B2A29521000994CA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +86,11 @@
 		B32E53A52A2D62F100994CA2 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		B32E53A72A2D64C100994CA2 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		B32E53A92A2D6CEE00994CA2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B32E53AB2A2D730300994CA2 /* EmptyViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewViewController.swift; sourceTree = "<group>"; };
+		B32E53AC2A2D730300994CA2 /* EmptyViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyViewViewController.xib; sourceTree = "<group>"; };
+		B3DF91742A2E8632000A5E77 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		B3DF91782A2E8F7B000A5E77 /* MovieDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetailViewController.storyboard; sourceTree = "<group>"; };
+		B3DF917A2A2E9405000A5E77 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +101,7 @@
 				B32E537D2A2955C700994CA2 /* FirebaseAnalytics in Frameworks */,
 				B32E537F2A2955C700994CA2 /* FirebaseRemoteConfig in Frameworks */,
 				B32E53912A29635300994CA2 /* AFNetworking in Frameworks */,
+				B32305572A2EBB240099E7E6 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B32305522A2EA8590099E7E6 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				B32E53AB2A2D730300994CA2 /* EmptyViewViewController.swift */,
+				B32E53AC2A2D730300994CA2 /* EmptyViewViewController.xib */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 		B32E533D2A29521000994CA2 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +161,7 @@
 				B32E534B2A29521000994CA2 /* SceneDelegate.swift */,
 				B32E534D2A29521000994CA2 /* ViewController.swift */,
 				B32E534F2A29521000994CA2 /* Main.storyboard */,
+				B32305582A2EBBC00099E7E6 /* 99257-loading-gif-animation.json */,
 				B32E53522A29521200994CA2 /* Assets.xcassets */,
 				B32E53542A29521200994CA2 /* LaunchScreen.storyboard */,
 				B32E53572A29521200994CA2 /* Info.plist */,
@@ -175,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				B32E53982A2D415700994CA2 /* HomePage */,
+				B3DF91732A2E8618000A5E77 /* MovieDetail */,
+				B32305522A2EA8590099E7E6 /* EmptyView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,8 +233,19 @@
 				B32E53A52A2D62F100994CA2 /* Reusable.swift */,
 				B32E53A72A2D64C100994CA2 /* UIImageViewExtension.swift */,
 				B32E53A92A2D6CEE00994CA2 /* UIViewExtension.swift */,
+				B3DF917A2A2E9405000A5E77 /* Navigator.swift */,
+				B32305532A2EABB30099E7E6 /* NibLoadable.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		B3DF91732A2E8618000A5E77 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF91742A2E8632000A5E77 /* MovieDetailViewController.swift */,
+				B3DF91782A2E8F7B000A5E77 /* MovieDetailViewController.storyboard */,
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +268,7 @@
 				B32E537C2A2955C700994CA2 /* FirebaseAnalytics */,
 				B32E537E2A2955C700994CA2 /* FirebaseRemoteConfig */,
 				B32E53902A29635300994CA2 /* AFNetworking */,
+				B32305562A2EBB240099E7E6 /* Lottie */,
 			);
 			productName = MoviesWithFirebaseAnalytics;
 			productReference = B32E53462A29521000994CA2 /* MoviesWithFirebaseAnalytics.app */;
@@ -305,6 +345,7 @@
 			packageReferences = (
 				B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B32E538F2A29635300994CA2 /* XCRemoteSwiftPackageReference "AFNetworking" */,
+				B32305552A2EBB240099E7E6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B32E53472A29521000994CA2 /* Products */;
 			projectDirPath = "";
@@ -322,11 +363,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DF91792A2E8F7B000A5E77 /* MovieDetailViewController.storyboard in Resources */,
 				B32E53562A29521200994CA2 /* LaunchScreen.storyboard in Resources */,
+				B32305592A2EBBC00099E7E6 /* 99257-loading-gif-animation.json in Resources */,
 				B32E53532A29521200994CA2 /* Assets.xcassets in Resources */,
 				B32E538E2A2960D700994CA2 /* SplashScreenVC.storyboard in Resources */,
 				B32E537A2A29550300994CA2 /* GoogleService-Info.plist in Resources */,
 				B32E539E2A2D437900994CA2 /* MoviesViewController.storyboard in Resources */,
+				B32E53AE2A2D730300994CA2 /* EmptyViewViewController.xib in Resources */,
 				B32E53512A29521000994CA2 /* Main.storyboard in Resources */,
 				B32E53A32A2D590300994CA2 /* MovieCollectionViewCell.xib in Resources */,
 			);
@@ -356,12 +400,16 @@
 				B32E53A82A2D64C100994CA2 /* UIImageViewExtension.swift in Sources */,
 				B32E53952A2D3FF600994CA2 /* Movies.swift in Sources */,
 				B32E53AA2A2D6CEE00994CA2 /* UIViewExtension.swift in Sources */,
+				B3DF91762A2E8632000A5E77 /* MovieDetailViewController.swift in Sources */,
 				B32E53972A2D415300994CA2 /* MoviesViewModel.swift in Sources */,
 				B32E534E2A29521000994CA2 /* ViewController.swift in Sources */,
 				B32E53A62A2D62F100994CA2 /* Reusable.swift in Sources */,
 				B32E534A2A29521000994CA2 /* AppDelegate.swift in Sources */,
+				B32305542A2EABB30099E7E6 /* NibLoadable.swift in Sources */,
 				B32E534C2A29521000994CA2 /* SceneDelegate.swift in Sources */,
 				B32E539A2A2D41E700994CA2 /* MoviesViewController.swift in Sources */,
+				B3DF917B2A2E9405000A5E77 /* Navigator.swift in Sources */,
+				B32E53AD2A2D730300994CA2 /* EmptyViewViewController.swift in Sources */,
 				B32E538A2A29609900994CA2 /* SplashScreenVC.swift in Sources */,
 				B32E53A22A2D590300994CA2 /* MovieCollectionViewCell.swift in Sources */,
 			);
@@ -707,6 +755,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B32305552A2EBB240099E7E6 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -726,6 +782,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B32305562A2EBB240099E7E6 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B32305552A2EBB240099E7E6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		B32E537C2A2955C700994CA2 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B32E537B2A2955C700994CA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
