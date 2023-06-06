@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieImage: UIImageView!
@@ -24,6 +25,7 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
         loadMovieDetails()
+        logMovieDetailView(movieID: movieID ?? "")
     }
     
     func loadMovieDetails() {
@@ -64,6 +66,11 @@ class MovieDetailViewController: UIViewController {
             }
         }.resume()
     }
-
-
+    
+    func logMovieDetailView(movieID: String) {
+        let parameters: [String: Any] = [
+            "movieID": movieID
+        ]
+        Analytics.logEvent("movie_detail_view", parameters: parameters)
+    }
 }

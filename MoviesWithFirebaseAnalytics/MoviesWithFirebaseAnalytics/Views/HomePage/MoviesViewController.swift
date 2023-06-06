@@ -25,12 +25,11 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         searchBar.delegate = self
-        emptyView.bind(type: .homePage)
-        emptyView.frame = collectionView.bounds
-        collectionView.addSubview(emptyView)
-        collectionView.isScrollEnabled = false
-        setupLoadingAnimationView()
+        
         collectionView.register(UINib(nibName: MovieCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reuseID)
+        
+        addEmptyView(type: .homePage, isScrollEnabled: false)
+        setupLoadingAnimationView()
     }
     
     private func setupLoadingAnimationView() {
@@ -104,10 +103,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             emptyView.isHidden = false
-            emptyView.bind(type: .homePage)
-            emptyView.frame = collectionView.bounds
-            collectionView.addSubview(emptyView)
-            collectionView.isScrollEnabled = false
+            addEmptyView(type: .homePage, isScrollEnabled: false)
             stopLoadingAnimation()
         } else if searchText.count >= 3 {
             startLoadingAnimation()
@@ -119,10 +115,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
                     case .success(let searchResults):
                         if searchResults.isEmpty {
                             self.emptyView.isHidden = false
-                            self.emptyView.bind(type: .noData)
-                            self.emptyView.frame = self.collectionView.bounds
-                            self.collectionView.addSubview(self.emptyView)
-                            self.collectionView.isScrollEnabled = false
+                            self.addEmptyView(type: .noData, isScrollEnabled: false)
                         } else {
                             self.emptyView.isHidden = true
                             self.searchResults = searchResults
@@ -132,11 +125,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
                         }
                     case .failure(let error):
                         self.emptyView.isHidden = false
-                        self.emptyView.bind(type: .noData)
-                        self.emptyView.frame = self.collectionView.bounds
-                        self.collectionView.addSubview(self.emptyView)
-                        self.collectionView.isScrollEnabled = false
-
+                        self.addEmptyView(type: .noData, isScrollEnabled: false)
                         print("Error: \(error)")
                     }
                     self.stopLoadingAnimation()
@@ -144,11 +133,17 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             }
         } else {
             emptyView.isHidden = false
-            emptyView.bind(type: .homePage)
-            emptyView.frame = collectionView.bounds
-            collectionView.addSubview(emptyView)
-            collectionView.isScrollEnabled = false
+            addEmptyView(type: .homePage, isScrollEnabled: false)
             stopLoadingAnimation()
         }
+    }
+    
+    func addEmptyView(type: EmptyViewType, isScrollEnabled: Bool) {
+        emptyView.bind(type: type)
+        emptyView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: collectionView.bounds.height + 100)
+        
+        collectionView.setContentOffset(CGPoint.zero, animated: true)
+        collectionView.addSubview(emptyView)
+        collectionView.isScrollEnabled = isScrollEnabled
     }
 }

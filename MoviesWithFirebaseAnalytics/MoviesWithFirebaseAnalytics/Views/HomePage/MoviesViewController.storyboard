@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UYQ-6p-rbw">
-                                <rect key="frame" x="0.0" y="74" width="393" height="45"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="UYQ-6p-rbw">
+                                <rect key="frame" x="0.0" y="114" width="393" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ltq-d7-irf"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R4y-aq-EPJ">
-                                <rect key="frame" x="10" y="129" width="373" height="723"/>
+                                <rect key="frame" x="10" y="169" width="373" height="683"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="637-kR-5f4">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -46,15 +46,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loodos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qea-gr-bdm">
+                                <rect key="frame" x="15" y="74" width="363" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Qea-gr-bdm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="C0P-DL-xO6"/>
                             <constraint firstItem="R4y-aq-EPJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Fym-WE-Z1c"/>
-                            <constraint firstItem="UYQ-6p-rbw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="VUO-h5-oi0"/>
+                            <constraint firstItem="UYQ-6p-rbw" firstAttribute="top" secondItem="Qea-gr-bdm" secondAttribute="bottom" constant="10" id="HnX-U9-7Jj"/>
                             <constraint firstItem="R4y-aq-EPJ" firstAttribute="top" secondItem="UYQ-6p-rbw" secondAttribute="bottom" constant="10" id="WIt-zR-q5P"/>
                             <constraint firstItem="UYQ-6p-rbw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Y82-TM-U1z"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qea-gr-bdm" secondAttribute="trailing" constant="15" id="bPh-E6-Fvz"/>
                             <constraint firstItem="UYQ-6p-rbw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="iyU-Wu-U1d"/>
+                            <constraint firstItem="Qea-gr-bdm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="sM9-LX-Zsq"/>
                             <constraint firstAttribute="bottom" secondItem="R4y-aq-EPJ" secondAttribute="bottom" id="wn9-kN-pwh"/>
                             <constraint firstItem="R4y-aq-EPJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-10" id="yM1-7G-RLB"/>
                         </constraints>
@@ -67,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061.8320610687022" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1057.2519083969464" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
