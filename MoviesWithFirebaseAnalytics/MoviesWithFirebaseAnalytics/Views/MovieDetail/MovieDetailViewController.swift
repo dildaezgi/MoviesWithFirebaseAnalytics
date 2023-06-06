@@ -10,6 +10,10 @@ import UIKit
 class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var movieMinute: UILabel!
+    @IBOutlet weak var movieStar: UILabel!
+    @IBOutlet weak var movieYear: UILabel!
+    @IBOutlet weak var movieGenre: UILabel!
     @IBOutlet weak var movieDescription: UILabel!
     
     private let apiKey = "2232c59c"
@@ -48,6 +52,10 @@ class MovieDetailViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.movieTitle.text = movieDetail.title
+                    self.movieMinute.text = movieDetail.runtime
+                    self.movieStar.text = movieDetail.imdbRating
+                    self.movieYear.text = movieDetail.year
+                    self.movieGenre.text = movieDetail.genre
                     self.movieDescription.text = movieDetail.plot
                     self.movieImage.imageFromURL(movieDetail.poster ?? "", placeholderImage: UIImage(named: "placeholder"))
                 }
