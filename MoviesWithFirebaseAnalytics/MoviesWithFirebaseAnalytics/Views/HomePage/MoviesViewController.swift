@@ -93,29 +93,13 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movieDetailVC = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
-        movieDetailVC.movieID = searchResults[indexPath.row].imdbID
-        print("MovieDetailViewController created with movieID: \(movieDetailVC.movieID)")
-
-        present(movieDetailVC, animated: true, completion: nil)
-
-//        print("Did select item at index: \(indexPath.row)")
-//
-//        let movieDetailVC = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
-//        movieDetailVC.movieID = searchResults[indexPath.row].imdbID
-//        print("MovieDetailViewController created with movieID: \(movieDetailVC.movieID)")
-//
-//        if let navigationController = navigationController {
-//            navigationController.pushViewController(movieDetailVC, animated: true)
-//            print("Pushed MovieDetailViewController")
-//
-//        } else {
-//            print("Navigation controller is nil")
-//        }
+        if let vc = UIStoryboard(name: "MovieDetailViewController", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController
+        {
+            vc.movieID = searchResults[indexPath.row].imdbID
+            present(vc, animated: true, completion: nil)
+        }
     }
     
-    
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             emptyView.isHidden = false
