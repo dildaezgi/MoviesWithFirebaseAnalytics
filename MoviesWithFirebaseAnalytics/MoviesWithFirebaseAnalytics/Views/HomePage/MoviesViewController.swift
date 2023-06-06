@@ -28,6 +28,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         emptyView.bind(type: .homePage)
         emptyView.frame = collectionView.bounds
         collectionView.addSubview(emptyView)
+        collectionView.isScrollEnabled = false
         setupLoadingAnimationView()
         collectionView.register(UINib(nibName: MovieCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reuseID)
     }
@@ -106,6 +107,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             emptyView.bind(type: .homePage)
             emptyView.frame = collectionView.bounds
             collectionView.addSubview(emptyView)
+            collectionView.isScrollEnabled = false
             stopLoadingAnimation()
         } else if searchText.count >= 3 {
             startLoadingAnimation()
@@ -120,10 +122,12 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
                             self.emptyView.bind(type: .noData)
                             self.emptyView.frame = self.collectionView.bounds
                             self.collectionView.addSubview(self.emptyView)
+                            self.collectionView.isScrollEnabled = false
                         } else {
                             self.emptyView.isHidden = true
                             self.searchResults = searchResults
                             self.collectionView.isHidden = false
+                            self.collectionView.isScrollEnabled = true
                             self.collectionView.reloadData()
                         }
                     case .failure(let error):
@@ -131,6 +135,8 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
                         self.emptyView.bind(type: .noData)
                         self.emptyView.frame = self.collectionView.bounds
                         self.collectionView.addSubview(self.emptyView)
+                        self.collectionView.isScrollEnabled = false
+
                         print("Error: \(error)")
                     }
                     self.stopLoadingAnimation()
@@ -141,6 +147,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             emptyView.bind(type: .homePage)
             emptyView.frame = collectionView.bounds
             collectionView.addSubview(emptyView)
+            collectionView.isScrollEnabled = false
             stopLoadingAnimation()
         }
     }
